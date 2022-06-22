@@ -30,7 +30,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Infected
             </Typography>
-            <Typography varaint="h5" component="h2">
+            <Typography variant="h5" component="h2">
               <CountUp
                 start={0}
                 end={confirmed.value}
@@ -41,7 +41,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography varaint="body2">
+            <Typography variant="body2">
               Number of Active Cases of Covid-19
             </Typography>
           </CardContent>
@@ -57,7 +57,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Recovered
             </Typography>
-            <Typography varaint="h5" component="h2">
+            <Typography variant="h5" component="h2">
               <CountUp
                 start={0}
                 end={recovered.value}
@@ -68,7 +68,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography varaint="body2">
+            <Typography variant="body2">
               Number of recoveries from Covid-19
             </Typography>
           </CardContent>
@@ -84,7 +84,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Deaths
             </Typography>
-            <Typography varaint="h5" component="h2">
+            <Typography variant="h5" component="h2">
               <CountUp
                 start={0}
                 end={deaths.value}
@@ -95,7 +95,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography varaint="body2">
+            <Typography variant="body2">
               Number of deaths cause by Covid-19
             </Typography>
           </CardContent>
