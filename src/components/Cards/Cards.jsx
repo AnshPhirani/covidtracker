@@ -5,13 +5,16 @@ import CountUp from "react-countup";
 import styles from "./Cards.module.css";
 import classNames from "classnames";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate }, country}) => {
   if (!confirmed) {
     return "Loding...";
   }
 
   return (
     <div className={styles.container}>
+      <Typography gutterBottom variant="h4" component="h2" className={styles.country} >
+        {country ? country : "Global"}
+      </Typography>
       <Grid
         container
         spacing={3}

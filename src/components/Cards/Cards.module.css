@@ -5,6 +5,10 @@
   margin: 50px 0;
 }
 
+.country{
+  margin-bottom: 30px !important;
+}
+
 .card {
   margin: 0 2% !important;
 }
