@@ -5,14 +5,23 @@ import CountUp from "react-countup";
 import styles from "./Cards.module.css";
 import classNames from "classnames";
 
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate }, country}) => {
-  if (!confirmed) {
+const Cards = ({ countryData, country }) => {
+  const {
+    data: { confirmed, recovered, deaths },
+    lastUpdate,
+  } = countryData;
+  if (!confirmed && country) {
     return "Loding...";
   }
 
   return (
     <div className={styles.container}>
-      <Typography gutterBottom variant="h4" component="h2" className={styles.country} >
+      <Typography
+        gutterBottom
+        variant="h4"
+        component="h2"
+        className={styles.country}
+      >
         {country ? country : "Global"}
       </Typography>
       <Grid
@@ -34,12 +43,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate }, country}) =
               Infected
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp
-                start={0}
-                end={confirmed.value}
-                duration={2.5}
-                separator=","
-              />
+              <CountUp start={0} end={confirmed} duration={2.5} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -61,12 +65,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate }, country}) =
               Recovered
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp
-                start={0}
-                end={recovered.value}
-                duration={2.5}
-                separator=","
-              />
+              <CountUp start={0} end={recovered} duration={2.5} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -88,12 +87,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate }, country}) =
               Deaths
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp
-                start={0}
-                end={deaths.value}
-                duration={2.5}
-                separator=","
-              />
+              <CountUp start={0} end={deaths} duration={2.5} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
